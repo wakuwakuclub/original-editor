@@ -1,2 +1,0 @@
-# orijinal-editor
-electronによるオリジナルのGUIエディタ
