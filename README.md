@@ -1,10 +1,29 @@
 # original-editor
 
+## Quick Start
+```bash
+# はじめにoriginal-editorに移動する
+# -------------------
+# electronのインストール
+npm i -D electron
+
+# electron-localshortcutのインストール
+npm i -D electron-localshortcut
+
+# ファイルの実行
+npm run start
+```
+---
+
 ## 説明
-わくわく倶楽部主催ハンズオン**electronでエディタを作ろう**のリポジトリ
+わくわく倶楽部主催ハンズオン「electronでエディタを作ろう」のリポジトリ
+
+---
 
 ## 元リポジトリ
 [テキストエディターを作ってElectronの基礎を学ぼう！ HTML5でPCアプリ開発入門　のデモアプリ](https://github.com/ics-creative/150819_electron_text_editor)
+
+---
 
 ## 参考リンク
 ### electron
