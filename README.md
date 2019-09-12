@@ -26,6 +26,24 @@ npm i -D electron-localshortcut
 # ファイルの実行
 npm run start
 ```
+
+---
+
+## Option
+### devtron
+```bash
+# devtron(デバッガ拡張)のインストール
+npm i -D devtron
+
+# devtronインストールのためにelectronを起動
+npm run start
+```
+Dev Toolの`Console`に移動
+```
+require("devtron").install()
+```
+完了
+
 ---
 
 ## 説明

@@ -3,6 +3,7 @@
     "start": "electron ./src"
   },
   "devDependencies": {
+    "devtron": "^1.4.0",
     "electron": "^1.8.8"
   },
   "private": true
