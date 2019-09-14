@@ -21,9 +21,6 @@ function createWindow() {
     slashes: true
   }));
 
-  // デベロッパーツールの起動
-  mainWindow.webContents.openDevTools();
-
   // メインウィンドウが閉じられたときの処理
   mainWindow.on('closed', () => {
     mainWindow = null;
