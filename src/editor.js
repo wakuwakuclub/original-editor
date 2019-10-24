@@ -1,5 +1,15 @@
 const fs = require('fs');
 const {BrowserWindow, dialog} = require('electron').remote;
+const {execSync} = require("child_process");
+const Encoding = require("encoding-japanese");
+
+const toString = (bytes) => {
+  return Encoding.convert(bytes, {
+    from: "SJIS",
+    to: "UNICODE",
+    type: "string"
+  });
+};
 
 let inputArea = null;
 let inputTxt = null;
@@ -58,6 +68,10 @@ function onLoad() {
   document.querySelector('#btnSave').addEventListener('click', () => {
     saveFile();
   });
+  
+  document.querySelector('#btnUpload').addEventListener('click', () => {
+    uploadFile();
+  });
 };
 
 /**
@@ -74,7 +88,7 @@ function openLoadFile() {
       filters: [
         {
           name: 'Documents',
-          extensions: ['txt', 'text', 'html', 'js']
+          extensions: ['ino']
         }
       ]
     },
@@ -158,7 +172,7 @@ function saveNewFile() {
       filters: [
         {
           name: 'Documents',
-          extensions: ['txt', 'text', 'html', 'js']
+          extensions: ['ino']
         }
       ]
     },
@@ -171,4 +185,29 @@ function saveNewFile() {
       }
     }
   );
+}
+
+function uploadFile() {
+  const win = BrowserWindow.getFocusedWindow();
+
+  dialog.showOpenDialog(
+    win,
+    // どんなダイアログを出すかを指定するプロパティ
+    {
+      properties: ['openFile'],
+      filters: [
+        {
+          name: 'Documents',
+          extensions: ['ino']
+        }
+      ]
+    },
+    // [ファイル選択]ダイアログが閉じられた後のコールバック関数
+    (fileNames) => {
+      if (fileNames) {
+        console.log(fileNames[0]);
+        var filename = fileNames[0];
+        console.log(execSync(`python a.py $(filename)`).toString());
+      }
+    });
 }

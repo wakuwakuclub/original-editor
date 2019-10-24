@@ -22,6 +22,7 @@ function createWindow() {
   }));
 
   // メインウィンドウが閉じられたときの処理
+  mainWindow.webContents.openDevTools();
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
