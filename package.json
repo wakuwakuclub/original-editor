@@ -5,7 +5,7 @@
   "devDependencies": {
     "child_process": "^1.0.2",
     "devtron": "^1.4.0",
-    "electron": "^7.2.4",
+    "electron": "^15.5.5",
     "encoding-japanese": "^1.0.30"
   },
   "private": true
